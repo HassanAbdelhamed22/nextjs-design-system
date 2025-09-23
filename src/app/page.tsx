@@ -7,12 +7,12 @@ export default function Home() {
         Design System in Depth
       </h1>
 
-      <div className="flex flex-col justify-center gap-3">
-        <Button variant="solid"> SOLID</Button>
-        <Button variant="destructive"> DESTRUCTIVE</Button>
-        <Button variant="secondary"> SECONDARY</Button>
-        <Button variant="outline"> OUTLINE</Button>
-        <Button variant="ghost"> GHOST</Button>
+      <div className="flex flex-col gap-5 items-center">
+        <Button variant="solid" size="base"> SOLID + BASE</Button>
+        <Button variant="destructive" size="base"> DESTRUCTIVE + BASE</Button>
+        <Button variant="secondary" size="sm"> SECONDARY + SM</Button>
+        <Button variant="outline" size="lg"> OUTLINE + LG</Button>
+        <Button variant="ghost" size="xs"> GHOST + XS</Button>
         <Button variant="link"> LINK</Button>
       </div>
     </main>
