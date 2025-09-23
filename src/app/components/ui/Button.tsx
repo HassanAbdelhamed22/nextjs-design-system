@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { tailwindCMerge } from "@/utils";
 
 const buttonVariants = cva(
   "rounded-lg text-white px-3 py-3 duration-200 font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed",
@@ -26,15 +27,12 @@ interface IProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   children?: ReactNode;
-  className?: string;
 }
 
-const Button = ({ children, className, variant, ...rest }: IProps) => {
+const Button = ({ children, variant, ...rest }: IProps) => {
   return (
     <button
-      className={`${className} px-3 py-3 ${buttonVariants({
-        variant: variant,
-      })}`}
+      className={`${tailwindCMerge(buttonVariants({ variant }))}`}
       {...rest}
     >
       {children}
