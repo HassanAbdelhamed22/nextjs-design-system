@@ -16,10 +16,14 @@ const buttonVariants = cva(
         ghost: "bg-transparent hover:bg-gray-600",
       },
       size: {
-        base: "px-4 text-base h-10",
         xs: "px-2 text-xs h-6",
         sm: "px-3 text-sm h-8",
+        base: "px-4 text-base h-10",
         lg: "px-5 text-lg h-12",
+      },
+      fullWidth: {
+        true: "w-full",
+        false: "w-fit",
       },
     },
     defaultVariants: {
@@ -35,10 +39,10 @@ interface IProps
   children?: ReactNode;
 }
 
-const Button = ({ children, variant, size, ...rest }: IProps) => {
+const Button = ({ children, variant, size, fullWidth, ...rest }: IProps) => {
   return (
     <button
-      className={`${tailwindCMerge(buttonVariants({ variant, size }))}`}
+      className={`${tailwindCMerge(buttonVariants({ variant, size, fullWidth }))}`}
       {...rest}
     >
       {children}
