@@ -8,12 +8,12 @@ export default function Home() {
       </h1>
 
       <div className="flex flex-col justify-center gap-3">
-        <Button> SOLID</Button>
-        <Button> DESTRUCTIVE</Button>
-        <Button> SECONDARY</Button>
-        <Button> OUTLINE</Button>
-        <Button> GHOST</Button>
-        <Button> LINK</Button>
+        <Button variant="solid"> SOLID</Button>
+        <Button variant="destructive"> DESTRUCTIVE</Button>
+        <Button variant="secondary"> SECONDARY</Button>
+        <Button variant="outline"> OUTLINE</Button>
+        <Button variant="ghost"> GHOST</Button>
+        <Button variant="link"> LINK</Button>
       </div>
     </main>
   );
