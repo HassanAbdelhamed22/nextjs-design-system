@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { tailwindCMerge } from "@/utils";
 
 const buttonVariants = cva(
-  "rounded-lg text-white px-3 py-3 duration-200 font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center rounded-lg text-white duration-200 font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -16,9 +16,16 @@ const buttonVariants = cva(
         ghost: "bg-transparent hover:bg-gray-600",
         link: "bg-transparent hover:bg-transparent",
       },
+      size: {
+        base: "px-4 text-base h-10",
+        xs: "px-2 text-xs h-6",
+        sm: "px-3 text-sm h-8",
+        lg: "px-5 text-lg h-12",
+      },
     },
     defaultVariants: {
       variant: "solid",
+      size: "base",
     },
   }
 );
@@ -29,10 +36,10 @@ interface IProps
   children?: ReactNode;
 }
 
-const Button = ({ children, variant, ...rest }: IProps) => {
+const Button = ({ children, variant, size, ...rest }: IProps) => {
   return (
     <button
-      className={`${tailwindCMerge(buttonVariants({ variant }))}`}
+      className={`${tailwindCMerge(buttonVariants({ variant, size }))}`}
       {...rest}
     >
       {children}
