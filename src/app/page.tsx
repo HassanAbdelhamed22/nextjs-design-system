@@ -13,7 +13,6 @@ export default function Home() {
         <Button variant="secondary" size="sm"> SECONDARY + SM</Button>
         <Button variant="outline" size="lg"> OUTLINE + LG</Button>
         <Button variant="ghost" size="xs"> GHOST + XS</Button>
-        <Button variant="link"> LINK</Button>
       </div>
     </main>
   );
