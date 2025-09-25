@@ -1,12 +1,15 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* Light Theme */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --default-brand: 152.9 60% 52.9%
 }
 
 @theme {
-  --color-primary: #34996b;
+  --color-primary: hsl(var(--default-brand) / 0.7);
 }
 
 @theme inline {
@@ -16,10 +19,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --default-brand: 152.9 60% 52.9%;
   }
 }
 
